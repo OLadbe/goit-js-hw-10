@@ -1,12 +1,14 @@
 {
-  "name": "vanilla-app-template",
+  "name": "goit-js-hw-10",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/vanilla-app-template/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "push": "git add . && git commit -m 'update' && git push",
+    "start": "npm run dev"
   },
   "devDependencies": {
     "glob": "^11.0.0",
@@ -17,7 +19,20 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "flatpickr": "^4.6.13",
+    "izitoast": "^1.4.0",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
-  }
+  },
+  "description": "Bu proje Vite kullanılarak oluşturulmuştur. Ek özelliklerin tanınması ve özelleştirilmesi için [belgelere bakın](https://vitejs.dev/).",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OLadbe/goit-js-hw-10.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/OLadbe/goit-js-hw-10/issues"
+  },
+  "homepage": "https://github.com/OLadbe/goit-js-hw-10#readme"
 }
