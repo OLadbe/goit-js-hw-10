@@ -13,6 +13,7 @@ const hoursRef = document.querySelector("[data-hours]");
 const minutesRef = document.querySelector("[data-minutes]");
 const secondsRef = document.querySelector("[data-seconds]");
 
+startBtn.disabled = true;
 
 const options = {
   enableTime: true,
@@ -22,12 +23,13 @@ const options = {
   onClose(selectedDates) {
     const currentDate = new Date();
     
-    // Перевіряємо саме обрану користувачем дату (selectedDates[0])
-    if (selectedDates[0] < currentDate) {
+    if (selectedDates[0] <= currentDate) {
       iziToast.error({ 
         message: 'Please choose a date in the future',
         position: 'center'
       });
+      userSelectedDate = null;
+      startBtn.disabled = true;
     } else {
       userSelectedDate = selectedDates[0];
       startBtn.disabled = false;
@@ -58,6 +60,8 @@ function addLeadingZero(value) {
 
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
+  input.disabled = true;
+  
   timerId = setInterval(() => {
     const currentTime = new Date();
     const diff = userSelectedDate - currentTime;
